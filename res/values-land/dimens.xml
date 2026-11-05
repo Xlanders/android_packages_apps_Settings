@@ -34,4 +34,7 @@
     <!-- VPN -->
     <dimen name="vpn_dialog_max_height">212dp</dimen>
     <dimen name="vpn_dialog_margin_bottom">8dp</dimen>
+
+    <!-- No large homepage title in landscape -->
+    <dimen name="homepage_title_height">0dp</dimen>
 </resources>

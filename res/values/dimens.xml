@@ -90,6 +90,9 @@
     <!-- Homepage -->
     <dimen name="homepage_title_margin_bottom">8dp</dimen>
     <dimen name="homepage_title_margin_horizontal">24dp</dimen>
+    <!-- Large title above the search bar; with the search bar the header fills about a third
+         of the screen, like sub pages. It scrolls away with the content. -->
+    <dimen name="homepage_title_height">200dp</dimen>
     <dimen name="homepage_preference_min_height">88sp</dimen>
     <dimen name="homepage_preference_text_padding_start">16dp</dimen>
     <dimen name="homepage_preference_text_padding_start_expressive">12dp</dimen>

@@ -65,6 +65,19 @@
         app:elevation="0dp"
         android:touchscreenBlocksFocus="false"
         android:keyboardNavigationCluster="false">
+        <TextView
+            android:id="@+id/homepage_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/homepage_title_height"
+            android:gravity="bottom|start"
+            android:paddingHorizontal="@dimen/homepage_title_margin_horizontal"
+            android:paddingBottom="@dimen/homepage_title_margin_bottom"
+            android:background="?android:attr/colorBackground"
+            android:text="@string/settings_label"
+            android:textAppearance="@style/SettingsLibCollapsingToolbarTitle.Expanded"
+            android:textColor="?android:attr/textColorPrimary"
+            android:accessibilityHeading="true"
+            app:layout_scrollFlags="scroll|snap"/>
         <LinearLayout
             android:id="@+id/app_bar_container"
             android:layout_width="match_parent"
