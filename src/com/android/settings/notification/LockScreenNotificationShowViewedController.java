@@ -19,6 +19,7 @@ package com.android.settings.notification;
 import static android.provider.Settings.Secure.LOCK_SCREEN_NOTIFICATION_MINIMALISM;
 import static android.provider.Settings.Secure.LOCK_SCREEN_SHOW_ONLY_UNSEEN_NOTIFICATIONS;
 
+import static com.android.settings.notification.lockscreen.MinimalismPreferenceController.LS_MINIMALISM_DEFAULT;
 import static com.android.settings.notification.lockscreen.MinimalismPreferenceController.LS_MINIMALISM_ON;
 
 import android.content.ContentResolver;
@@ -124,7 +125,7 @@ public class LockScreenNotificationShowViewedController extends TogglePreference
     private boolean lockScreenMinimalism() {
         if (!Flags.notificationMinimalism()) return false;
         return Settings.Secure.getInt(mContext.getContentResolver(),
-                LOCK_SCREEN_NOTIFICATION_MINIMALISM, LS_MINIMALISM_ON) == LS_MINIMALISM_ON;
+                LOCK_SCREEN_NOTIFICATION_MINIMALISM, LS_MINIMALISM_DEFAULT) == LS_MINIMALISM_ON;
     }
 
     @Override

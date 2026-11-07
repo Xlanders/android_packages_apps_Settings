@@ -52,6 +52,9 @@ public class MinimalismPreferenceController
     private static final int LS_SHOW_NOTIF_OFF = 0;
     private static final int LS_MINIMALISM_OFF = 0;
     public static final int LS_MINIMALISM_ON = 1;
+    // Show full notification cards on the lock screen unless compact view is turned on. Must
+    // match the default in SystemUI's SeenNotificationsInteractor.
+    public static final int LS_MINIMALISM_DEFAULT = LS_MINIMALISM_OFF;
     private static final String KEY_MINIMALISM_PREFERENCE = "ls_minimalism";
     private static final String KEY_FULL_LIST_ILLUSTRATION = "full_list_illustration";
     private static final String KEY_COMPACT_ILLUSTRATION = "compact_illustration";
@@ -174,7 +177,7 @@ public class MinimalismPreferenceController
 
     private int getCurrentMinimalismValue() {
         return Settings.Secure.getInt(mContext.getContentResolver(),
-                LOCK_SCREEN_NOTIFICATION_MINIMALISM, LS_MINIMALISM_ON);
+                LOCK_SCREEN_NOTIFICATION_MINIMALISM, LS_MINIMALISM_DEFAULT);
     }
 
     private void refreshState(@Nullable Uri uri) {
