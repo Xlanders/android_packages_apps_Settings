@@ -51,6 +51,7 @@ import com.android.settings.core.InstrumentedPreferenceFragment;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 import com.android.settings.flags.Flags;
 import com.android.settings.restriction.UserRestrictionBindingHelper;
+import com.android.settings.search.actionbar.SearchMenuController;
 import com.android.settings.support.actionbar.HelpResourceProvider;
 import com.android.settings.widget.HighlightablePreferenceGroupAdapter;
 import com.android.settings.widget.LoadingViewController;
@@ -147,6 +148,9 @@ public abstract class SettingsPreferenceFragment extends InstrumentedPreferenceF
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        // Offer search on every page, at the end of the toolbar, opposite the back button. Pages
+        // that opt out with NEED_SEARCH_ICON_IN_ACTION_BAR, or already have it, are skipped.
+        SearchMenuController.init(this /* host */);
 
         mDevicePolicyManager = getContext().getSystemService(DevicePolicyManager.class);
         if (icicle != null) {
